@@ -5,21 +5,11 @@ public class Main {
     public static void main(String[] args) {
 
 //Create objects in BankAccount Class
-        BankAccount johnSmith = new BankAccount();
-        BankAccount kateRyan = new BankAccount();
+        BankAccount johnSmith = new BankAccount("9876456754", 150000.0,
+                "John Smith", "johnsmith@gmail.com", "6654-987-543");
+        BankAccount kateRyan = new BankAccount("43257687664", 25000,
+                "Kate Ryan", "kateryan@hotmail.com", "324-625-324");
 
-//Fields initialization
-        johnSmith.setCustomerName("John Smith");
-        johnSmith.setAccountNumber("0098676545");
-        johnSmith.setBalance(150420.5);
-        johnSmith.setCustomerEmailAdress("johnsmith@gmail.com");
-        johnSmith.setCustomerPhoneNumber("876-345-723");
-
-        kateRyan.setCustomerName("Kate Ryan");
-        kateRyan.setAccountNumber("6545898001");
-        kateRyan.setBalance(25000.0);
-        kateRyan.setCustomerEmailAdress("kateryan@hotmail.com");
-        kateRyan.setCustomerPhoneNumber("435-987-341");
 
         johnSmith.depositFunds(40000.7);
         kateRyan.withdrawFunds(40000);
