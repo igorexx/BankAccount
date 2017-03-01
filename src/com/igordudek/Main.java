@@ -7,7 +7,7 @@ public class Main {
 //Create objects in BankAccount Class
         BankAccount johnSmith = new BankAccount("9876456754", 150000.0,
                 "John Smith", "johnsmith@gmail.com", "6654-987-543");
-        BankAccount kateRyan = new BankAccount("43257687664", 25000,
+        BankAccount kateRyan = new BankAccount("43257687664", 100,
                 "Kate Ryan", "kateryan@hotmail.com", "324-625-324");
         BankAccount robertDurst = new BankAccount("Robert Durst", "durst@yahoo.com", "73635-736-32873");
 
@@ -17,7 +17,7 @@ public class Main {
 
 
         johnSmith.depositFunds(40000.7);
-        kateRyan.withdrawFunds(20000);
+        kateRyan.withdrawFunds(0);
 
         johnSmith.clientInfo();
         kateRyan.clientInfo();

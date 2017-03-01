@@ -78,10 +78,13 @@ public class BankAccount {
     //Withdrawal method
     public void withdrawFunds(double withdraw) {
         if (withdraw > this.balance) {
-            System.out.println(customerName + " has only " + this.balance + ". Withdrawal not processed. Balance: " + this.balance);
+            System.out.println(customerName + " has only " + this.balance + ". Withdrawal not processed. Remaining balance: " + this.balance);
+
+        } else if (withdraw == 0) {
+            System.out.println(customerName + " has not got any funds. Withdrawal not processed");
         } else {
             this.balance -= withdraw;
-            System.out.println(withdraw + " withdraw for " + this.customerName + " has been processed. New balance: " + this.balance);
+            System.out.println(withdraw + " withdraw for " + this.customerName + " has been processed. Remaining balance: " + this.balance);
         }
     }
 
