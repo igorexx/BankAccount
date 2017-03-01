@@ -9,16 +9,16 @@ public class BankAccount {
     private String accountNumber;
     private double balance;
     private String customerName;
-    private String customerEmailAdress;
+    private String customerEmailAddress;
     private String customerPhoneNumber;
 
 
-    //Contructor
-    public BankAccount(String accountNumber, double balance, String customerName, String customerEmailAdress, String customerPhoneNumber) {
+    //Constructor
+    public BankAccount(String accountNumber, double balance, String customerName, String customerEmailAddress, String customerPhoneNumber) {
         this.accountNumber = accountNumber;
         this.balance = balance;
         this.customerName = customerName;
-        this.customerEmailAdress = customerEmailAdress;
+        this.customerEmailAddress = customerEmailAddress;
         this.customerPhoneNumber = customerPhoneNumber;
     }
 
@@ -47,12 +47,12 @@ public class BankAccount {
         return customerName;
     }
 
-    public void setCustomerEmailAdress(String customerEmailAdress) {
-        this.customerEmailAdress = customerEmailAdress;
+    public void setCustomerEmailAddress(String customerEmailAddress) {
+        this.customerEmailAddress = customerEmailAddress;
     }
 
-    public String getCustomerEmailAdress() {
-        return customerEmailAdress;
+    public String getCustomerEmailAddress() {
+        return customerEmailAddress;
     }
 
     public void setCustomerPhoneNumber(String customerPhoneNumber) {
@@ -64,20 +64,31 @@ public class BankAccount {
     }
 
     //Deposit method
-    public double depositFunds(double deposit) {
+    public void depositFunds(double deposit) {
         this.balance += deposit;
-        return this.balance;
+        System.out.println(deposit + " deposit for " + this.customerName + " has been processed. New balance: " + this.balance);
 
     }
 
     //Withdrawal method
-    public double withdrawFunds(double withdraw) {
+    public void withdrawFunds(double withdraw) {
         if (withdraw > this.balance) {
-            System.out.println(customerName + " has insufficient funds");
-            return this.balance;
+            System.out.println(customerName + " has only " + this.balance + ". Withdrawal not processed. Balance: " + this.balance);
         } else {
             this.balance -= withdraw;
-            return this.balance;
+            System.out.println(withdraw + " withdraw for " + this.customerName + " has been processed. New balance: " + this.balance);
         }
+    }
+
+    //Client info print method
+    public void clientInfo() {
+        System.out.println("**********************");
+        System.out.println("Client info:");
+        System.out.println("");
+        System.out.println(this.customerName);
+        System.out.println("Account number " + this.accountNumber);
+        System.out.println("Balance: " + this.balance);
+        System.out.println("Phone number: " + this.customerPhoneNumber + " e-mail address: " + this.customerEmailAddress);
+        System.out.println(" ");
     }
 }
